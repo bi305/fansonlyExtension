@@ -9,5 +9,14 @@
 
 	"action": {
 		"default_popup": "popup.html"
-	}
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://onlyfans.com/*"],
+			"js": ["contentScript.js"],
+			"css": ["contentScript.css"],
+			"run_at": "document_end"
+		}
+	],
+	"host_permissions": ["https://onlyfans.com/*"]
 }
