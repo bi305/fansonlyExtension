@@ -1,0 +1,23 @@
+{
+  "name": "fansonlyextension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bi305/fansonlyExtension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bi305/fansonlyExtension/issues"
+  },
+  "homepage": "https://github.com/bi305/fansonlyExtension#readme",
+  "dependencies": {
+    "antd": "^4.21.1"
+  }
+}
