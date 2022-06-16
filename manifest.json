@@ -3,21 +3,22 @@
 	"description": "This extension will only show to fans.",
 	"version": "1.0",
 	"manifest_version": 3,
-	"background": {
-		"service_worker": "background.js"
-	},
-	"options_page": "options.html",
-	"permissions": ["storage", "activeTab", "scripting"],
-	"action": {
-		"default_popup": "popup.html"
-	},
 	"content_scripts": [
 		{
 			"matches": ["https://onlyfans.com/*"],
 			"js": ["contentScript.js"],
-			"css": ["contentScript.css"],
-			"run_at": "document_end"
+			"css": ["contentScript.css"]
 		}
 	],
+
+	"background": {
+		"service_worker": "background.js"
+	},
+	"permissions": ["tabs"],
+	"options_page": "options.html",
+	"action": {
+		"default_popup": "popup.html"
+	},
+
 	"host_permissions": ["https://onlyfans.com/*"]
 }

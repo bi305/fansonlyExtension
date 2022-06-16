@@ -1,25 +1,29 @@
 const btn = document.querySelector('#checkbox');
 
-btn.addEventListener('click', async () => {
-    console.log(btn.value);
-    // let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+btn.addEventListener('click', () => {
 
-    // chrome.scripting.executeScript(
-    //     {
-    //         target: { tabId: tab.id },
-    //         function: pickColor,
-    //     },
-    //     async () => {
-
-
-    //     }
-    // );
-});
-
-// async function pickColor() {
-//     try {
-
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
+    if (btn.checked) {
+        let queryOptions = { active: true, currentWindow: true };
+        tabs = chrome.tabs.query(queryOptions, (tabs) => {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                { message: 'checked' },
+                (response) => {
+                    console.log(response);
+                }
+            )
+        });
+    }
+    else {
+        let queryOptions = { active: true, currentWindow: true };
+        tabs = chrome.tabs.query(queryOptions, (tabs) => {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                { message: 'unchecked' },
+                (response) => {
+                    console.log(response);
+                }
+            )
+        });
+    }
+})
