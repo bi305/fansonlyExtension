@@ -3,22 +3,35 @@
 	"description": "This extension will only show to fans.",
 	"version": "1.0",
 	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
 	"content_scripts": [
 		{
-			"matches": ["https://onlyfans.com/*"],
+			"matches": [
+				"https://onlyfans.com/*",
+				"https://onlyfans.com/my/chats/chat/*"
+			],
 			"js": ["contentScript.js"],
 			"css": ["contentScript.css"]
 		}
 	],
+	"web_accessible_resources": [
+		{
+			"resources": ["sidebar.html", "modal.html"],
+			"matches": ["https://*.onlyfans.com/*"],
+			"use_dynamic_url": true
+		}
+	],
 
-	"background": {
-		"service_worker": "background.js"
-	},
 	"permissions": ["tabs"],
 	"options_page": "options.html",
 	"action": {
 		"default_popup": "popup.html"
 	},
 
-	"host_permissions": ["https://onlyfans.com/*"]
+	"host_permissions": [
+		"https://onlyfans.com/*",
+		"https://onlyfans.com/my/chats/chat/*"
+	]
 }
