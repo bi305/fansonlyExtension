@@ -74,7 +74,7 @@ fetch(chrome.runtime.getURL("/modal.html"))
 						});
 					});
 			}
-		}, 3000);
+		}, 6000);
 		// not using innerHTML as it would break js event listeners of the page
 	});
 
@@ -128,4 +128,6 @@ fetch(chrome.runtime.getURL("/modal.html"))
 // 		DomManu();
 // 	}, 4000);
 // })();
-// g-input__wrapper m-no-border m-placeholder-full-lgray m-reset-bottom-gap b-make-post__text-input m-empty
+// g-input__wrapper m-no-border m-placeholder-full-lgray m-reset-bottom-gap b-make-post__text-input m m-empty
+
+// v-input form-control m-textarea g-input unlimsize m-reset-mb v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--hide-details theme--light v-text-field v-text-field--is-booted v-text-field--enclosed v-text-field--outlined v-text-field--placeholder
